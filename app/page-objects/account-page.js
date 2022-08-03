@@ -5,8 +5,16 @@ class AccountPage extends Page {
     return $('#column-right a[href*="account/edit"]');
   }
 
+  get orderHistoryLink() {
+    return $('#column-right a[href*="account/order"]');
+  }
+
   open() {
     return super.open('/index.php?route=account/account');
+  }
+
+  async goToOrderHistory() {
+    await this.orderHistoryLink.click();
   }
 }
 
